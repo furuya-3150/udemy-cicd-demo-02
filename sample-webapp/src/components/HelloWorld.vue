@@ -6,7 +6,7 @@
 </template>
 
 <script>
-// import axios from 'axios'
+import axios from 'axios'
 
 export default {
   name: 'HelloWorld',
@@ -20,10 +20,10 @@ export default {
   }
   ,
   mounted() {
-    // const BACKEND_URL = 'https://freeegale.info/api'
-    // axios
-      // .get(BACKEND_URL)
-      // .then(response => (this.info = response.data))
+    const BACKEND_URL = 'https://freeeagle.info/api'
+    axios
+      .get(BACKEND_URL)
+      .then(response => (this.info = response.data))
   }
 }
 </script>
