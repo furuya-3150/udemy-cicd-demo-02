@@ -54,7 +54,7 @@ jobs:
         cd sample-webapp
         docker buildx build --platform=linux/arm64 --push \
         -t $ECR_REGISTRY/$WEBAPP_CONTAINER_NAME:$WEBAPP_TAG \
-        -t $ECR_REGISTRY/$WEBAPP_CONTAINER_NAME:$latest \
+        -t $ECR_REGISTRY/$WEBAPP_CONTAINER_NAME:latest \
         .
 
     - name: backend push to ECR
@@ -65,7 +65,7 @@ jobs:
         cd sample-backend
         docker buildx build --platform=linux/arm64 --push \
         -t $ECR_REGISTRY/$BACKEND_CONTAINER_NAME:$BACKEND_TAG \
-        -t $ECR_REGISTRY/$BACKEND_CONTAINER_NAME:$latest \
+        -t $ECR_REGISTRY/$BACKEND_CONTAINER_NAME:latest \
         .
     - name: restapi push to ECR
       id: build-image-restapi
@@ -75,7 +75,7 @@ jobs:
         cd sample-restapi
         docker buildx build --platform=linux/arm64 --push \
         -t $ECR_REGISTRY/$RESTAPI_CONTAINER_NAME:$RESTAPI_TAG \
-        -t $ECR_REGISTRY/$RESTAPI_CONTAINER_NAME:$latest \
+        -t $ECR_REGISTRY/$RESTAPI_CONTAINER_NAME:latest \
         .
 
     - name: Deploy to ECS
